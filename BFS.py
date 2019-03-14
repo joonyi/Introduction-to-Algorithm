@@ -1,5 +1,5 @@
 import sys
-from Graph import Graph, Vertex
+from Graph import Graph
 
 def BFS(G, s):
     for key, u in G.V.items():
