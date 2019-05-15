@@ -2,11 +2,11 @@ import sys
 def MatrixChainOrder(p):
     n = len(p)
     m = [[0 for _ in range(n)] for _ in range(n)]
-    s= [[0 for _ in range(n)] for _ in range(n)]
+    s = [[0 for _ in range(n)] for _ in range(n)]
     for L in range(2, n): # Multiplication valid for at least two matrices
         for i in range(1, n-L+1):
             j = i + L - 1
-            m[i][j] = sys.maxsize
+            m[i][j] = float('inf')
             for k in range(i, j):
                 # (Ai..Ak) => m[i][k]
                 # (Ak+1..Aj) => m[k+1][j]

@@ -17,22 +17,24 @@ def SlowAllPairsShortest(W):
         ret = ExtendShortestPath(L,W)
     return ret
 
-# Not working
 def FasterAllPairsShortest(W):
     n = len(W)
     L = W
     m = 1
-    while m < n - 1:
-        ret = ExtendShortestPath()
+    ret = [[]]
+    for _ in range(int(n**0.5)):
+        ret = ExtendShortestPath(L, L)
+    return ret
 
 
 inf = sys.maxsize
 W = [
-        [0,3,8,inf,-4],
-        [inf,0,inf,1,7],
-        [inf,4,0,inf,inf],
-        [2,inf,-5,0,inf],
-        [inf,inf,inf,6,0]
+        [0,inf,inf,inf,-1,inf],
+        [1,0,inf,2,inf,inf],
+        [inf,2,0,inf,inf,-8],
+        [-4,inf,inf,0,3,inf],
+        [inf,7,inf,inf,0,inf],
+        [inf,5,10,inf,inf,0]
      ]
 # L = [
 #         [0,inf,inf,inf,inf],
@@ -43,5 +45,5 @@ W = [
 #      ]
 # L = W
 # print(ExtendShortestPath(L, W))
-print(SlowAllPairsShortest(W))
-
+# print(SlowAllPairsShortest(W))
+print(FasterAllPairsShortest(W))
